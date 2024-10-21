@@ -1,3 +1,7 @@
+let high_score =0;
+if(high_score<elapsedTime){
+  high_score =elapsedTime;
+}
 // inside script.js
 // all of our quotes
 const quotes = [

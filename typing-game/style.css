@@ -1,9 +1,24 @@
 /* inside style.css */
 .highlight {
-    background-color: yellow;
+    background-color: blue;
   }
   
   .error {
     background-color: lightcoral;
     border: red;
+  }
+  .p1 {
+    font-family: Georgia "Times New Roman", Times, serif;
+  }
+  /* CSS to style the header */
+header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+  }
+  div {
+    resize: both;
+    overflow: auto;
   }
