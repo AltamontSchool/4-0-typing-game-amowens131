@@ -1,7 +1,5 @@
-let high_score =0;
-if(high_score<elapsedTime){
-  high_score =elapsedTime;
-}
+let high_score = 0;
+
 // inside script.js
 // all of our quotes
 const quotes = [
@@ -63,7 +61,10 @@ typedValueElement.addEventListener('input', () => {
       // end of sentence
       // Display success
       const elapsedTime = new Date().getTime() - startTime;
-      const message = `CONGRATULATIONS! You finished in ${elapsedTime / 1000} seconds.`;
+      if(high_score<elapsedTime){
+        high_score =elapsedTime;
+      }
+      const message = `CONGRATULATIONS! You finished in ${elapsedTime / 1000} seconds.\nHigh Score: ${high_score} seconds`;
       messageElement.innerText = message;
     } else if (typedValue.endsWith(' ') && typedValue.trim() === currentWord) {
       // end of word
