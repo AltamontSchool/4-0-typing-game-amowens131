@@ -20,6 +20,7 @@ let startTime = Date.now();
 const quoteElement = document.getElementById('quote');
 const messageElement = document.getElementById('message');
 const typedValueElement = document.getElementById('typed-value');
+typedValue.Element.disabled:true
 // at the end of script.js
 document.getElementById('start').addEventListener('click', () => {
     // get a quote
@@ -49,7 +50,7 @@ document.getElementById('start').addEventListener('click', () => {
   
     // Start the timer
     startTime = new Date().getTime();
-  });
+
   // at the end of script.js
 typedValueElement.addEventListener('input', () => {
     // Get the current word
@@ -57,6 +58,7 @@ typedValueElement.addEventListener('input', () => {
     // get the current value
     const typedValue = typedValueElement.value;
   
+    let high_score=0;
     if (typedValue === currentWord && wordIndex === words.length - 1) {
       // end of sentence
       // Display success
@@ -64,8 +66,11 @@ typedValueElement.addEventListener('input', () => {
       if(high_score<elapsedTime){
         high_score =elapsedTime;
       }
-      const message = `CONGRATULATIONS! You finished in ${elapsedTime / 1000} seconds.\nHigh Score: ${high_score / 1000} seconds`;
+      const message = `CONGRATULATIONS! You finished in ${elapsedTime / 1000} seconds.\nHigh Score: ${high_score / 1000} seconds
+      \nhigh_score;${high_score/1000}sec`
+      high_score=elapsedTime;
       messageElement.innerText = message;
+      typedValue.Element.disabled;false
     } else if (typedValue.endsWith(' ') && typedValue.trim() === currentWord) {
       // end of word
       // clear the typedValueElement for the new word
@@ -86,5 +91,5 @@ typedValueElement.addEventListener('input', () => {
       // error state
       typedValueElement.className = 'error';
     }
+    });  
   });
-  
